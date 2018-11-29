@@ -1,5 +1,5 @@
 new Vue({
-    el: '.l-wrapper',
+    el: '.container',
 
     data() {
         return {

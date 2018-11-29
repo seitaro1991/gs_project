@@ -27,7 +27,11 @@
     <div class="container">
         <div class="grid">
             <div class="grid_item">
-                <div class="image_area">
+                <div class="p-modalBtn image_area" @click="openItem">
+                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
+                        alt="">
+                </div>
+                <div class="p-modal" :class="{'is-open': isModalActive}">
                     <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
                         alt="">
                 </div>
@@ -38,18 +42,26 @@
         </div>
         <div class="grid">
             <div class="grid_item">
-                <div class="image_area">
+                <div class="p-modalBtn image_area" @click="openItem">
+                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
+                        alt="">
+                </div>
+                <div class="p-modal" :class="{'is-open': isModalActive}">
                     <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
                         alt="">
                 </div>
                 <div class="text_area">
-                    <p class="detail"></p>
+                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
                 </div>
             </div>
         </div>
-        <div class="grid">
+        <!-- <div class="grid">
             <div class="grid_item">
-                <div class="image_area">
+                <div class="p-modalBtn image_area" @click="openItem">
+                    <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
+                        alt="">
+                </div>
+                <div class="p-modal" :class="{'is-open': isModalActive}">
                     <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
                         alt="">
                 </div>
@@ -57,72 +69,9 @@
                     <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
                 </div>
             </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="image_area">
-                    <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="image_area">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="image_area">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail"></p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="image_area">
-                    <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="image_area">
-                    <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
+        </div> -->
 
-        <div class="l-wrapper">
-            <button class="p-modalBtn" @click="openItem">{ ここをクリックすると、モーダルが開きます。}</button>
-        </div>
 
-        <div class="p-modal" :class="{'is-open': isModalActive}">
-            <!-- { clickで表示したいmodal_content部分 } -->
-            <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
-                alt="">
-        </div>
 
 
     </div>
@@ -133,7 +82,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <script src="main.js"></script>
 </body>
 

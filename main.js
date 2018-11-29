@@ -18,9 +18,7 @@ new Vue({
         * active状態を切り替える。
         */
         toggleModal() {
-            this.isModalActive = !this.isModalActive;
-            // this.isModalActive = true;
-            // alert(this.isModalActive);
+            this.isModalActive = !this.isModalActive
         },
     }
 });

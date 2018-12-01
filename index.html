@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mission Work</title>
+    <title>HiKEI</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="modal" :class="{ hide: isHide }" v-on:click="hide">
+        <img :src='modal_img'>
+    </div>
     <header>
         <img class="title_img" src="img/title.png" alt="title">
 
@@ -19,74 +23,43 @@
             </form>
         </div>
 
-        <img class="story_img" src="img/story.png" alt="">
-        <img class="wear_img" src="img/wear.png" alt="">
-        <img class="login_img" src="img/login3.png" alt="">
+        <i class="fas fa-book story_img"></i>
+        <i class="fas fa-tshirt wear_img"></i>
+        <i class="fas fa-sign-in-alt login_img"></i>
+
     </header>
 
     <div class="container">
         <div class="grid">
-            <div class="grid_item">
-                <div class="p-modalBtn image_area" @click="openItem">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
-                        alt="">
+            <div class="grid_item" v-on:click="greet">
+                <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
+                    alt="">
+                <div class="text_area">
+                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
                 </div>
-                <div class="p-modal" :class="{'is-open': isModalActive}">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw9e053212/images/content/companyInfo/1105x622_davis_t_1306.jpg"
-                        alt="">
+            </div>
+            <div class="grid_item" v-on:click="greet">
+                <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
+                    alt="">
+                <div class="text_area">
+                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
                 </div>
+            </div>
+            <div class="grid_item" v-on:click="greet">
+                <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
+                    alt="">
+                <div class="text_area">
+                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
+                </div>
+            </div>
+            <div class="grid_item" v-on:click="greet">
+                <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
+                    alt="">
                 <div class="text_area">
                     <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
                 </div>
             </div>
         </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="p-modalBtn image_area" @click="openItem">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
-                        alt="">
-                </div>
-                <div class="p-modal" :class="{'is-open': isModalActive}">
-                    <img class="grid_image" src="https://www.patagonia.jp/static/on/demandware.static/-/Library-Sites-PatagoniaShared/default/dw2c59681f/images/sport-pages/f18-snow/yoder-cap-kit.jpg"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="p-modalBtn image_area" @click="openItem">
-                    <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
-                        alt="">
-                </div>
-                <div class="p-modal" :class="{'is-open': isModalActive}">
-                    <img class="grid_image" src="https://www.ei-publishing.co.jp/wp/wp-content/uploads/2017/07/20025036/01_SAT.jpg"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid_item">
-                <div class="p-modalBtn image_area" @click="openItem">
-                    <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
-                        alt="">
-                </div>
-                <div class="p-modal" :class="{'is-open': isModalActive}">
-                    <img class="grid_image" src="https://www.patagonia.jp/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw2d90660a/images/hi-res/25921_SMDB.jpg?sw=750&sh=750&sm=fit&sfrm=png"
-                        alt="">
-                </div>
-                <div class="text_area">
-                    <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </div>
-        </div>
-
-
 
 
     </div>

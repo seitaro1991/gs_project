@@ -1,24 +1,30 @@
-new Vue({
-    el: '.container',
-
-    data() {
-        return {
-            isModalActive: false,
+var app = new Vue({
+    el: '.grid',
+    data: {
+        modal_img: ''
+    },
+    // `methods` オブジェクトの下にメソッドを定義する
+    methods: {
+        greet: function (event) {
+            modal.modal_img = event.target.src
+            modal.show();
         }
+    }
+})
+
+var modal = new Vue({
+    el: '.modal',
+    data: {
+        modal_img: '',
+        isHide: true
     },
     methods: {
-        /**
-        * clickイベントが発火されたタイミングで、 
-        * オーバーレイコンテンツを表示するフラグを持つdata(isModalActive)を切り替える
-        */
-        openItem() {
-            this.toggleModal();
+        hide: function (event) {
+            this.isHide = true;
         },
-        /**
-        * active状態を切り替える。
-        */
-        toggleModal() {
-            this.isModalActive = !this.isModalActive
-        },
+        show: function (event) {
+            this.isHide = false;
+        }
     }
-});
+})
+
